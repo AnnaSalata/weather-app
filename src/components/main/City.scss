@@ -1,0 +1,23 @@
+.city {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  color: white;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__name {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &__temp {
+    font-size: 18px;
+  }
+
+  &__weather {
+    font-size: 18px;
+  }
+}

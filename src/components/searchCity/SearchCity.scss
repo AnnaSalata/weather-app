@@ -1,0 +1,17 @@
+.search-city {
+  display: flex;
+  width: 250px;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border: 1px solid #2193b0;
+  background-color: rgba(27, 125, 161, 0.9);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+
+  &__name {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,103 @@
+.global-nav {
+  background-color: rgba(27, 125, 161, 0.9);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+
+  &__options {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: calc(100% - 50px);
+    width: 400px;
+    background-color: rgba(52, 154, 191, 0.8);
+    flex-direction: column;
+    justify-content: center;
+    //padding: 0 1rem;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: all 300ms;
+    transition-delay: 50ms;
+  }
+}
+
+.controls {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__menu {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+.global-nav_expand > .global-nav__options {
+  transform: scaleX(1);
+}
+
+.global-nav_expand .global-nav__option {
+  opacity: 1;
+}
+
+.search-cities {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/*@media (max-width: 720px) {
+  .global-nav_expand > .global-nav__options {
+    transform: scaleY(1);
+  }
+  .global-nav_expand .global-nav__option {
+    opacity: 1;
+  }
+  .global-nav__options {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    height: calc(78vh - 48px);
+    background-color: black;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 1rem;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: all 250ms;
+  }
+  .global-nav__option {
+    flex-basis: inherit;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 200ms;
+    transition-delay: 50ms;
+  }
+  .global-nav__option:last-child {
+    border-bottom: none;
+  }
+  .global-nav__link {
+    padding: 10px 0;
+    justify-content: flex-start;
+    font-size: 1.2rem;
+  }
+  .global-nav__controls {
+    display: inherit;
+  }
+
+}*/
