@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import './Header.scss';
 import {SearchForm} from "../searchForm";
 import {SearchCity} from "../searchCity/SearchCity";
@@ -30,17 +31,29 @@ export class Header extends React.Component {
             .catch((e) => console.log(e));
     };
 
-    onClick = (e) => {
-        e.preventDefault();
-        if (this.props.title) {
-            this.props.onClick(this.props.title);
+    addCityId = (newId) => {
+        let currentCitiesIds = JSON.parse(localStorage.getItem("cityIds"));
+        let idAlreadyExist = false;
+        for (let id of currentCitiesIds) {
+            if (id == newId) {
+                idAlreadyExist = true;
+                break;
+            }
+        }
+        console.log('ADD', newId);
+        console.log('idAlreadyExist', idAlreadyExist);
+        if (!idAlreadyExist) {
+            currentCitiesIds.push(newId);
+            localStorage.setItem("cityIds", JSON.stringify(currentCitiesIds));
+            // this.setCurrentCityIds(currentCitiesIds);
         }
     };
+
 
     render() {
         const searchCities = this.state.searchCities.map(searchCity => {
             return <SearchCity cityId={searchCity.id} cityName={searchCity.name} temperature={searchCity.main.temp}
-                               weather={searchCity.weather[0].main} onClick={this.props.onClick}/>
+                               weather={searchCity.weather[0].main} onAdd={this.addCityId}/>
         });
         let className = "global-nav ";
         if (this.state.isExpand) {
@@ -55,8 +68,9 @@ export class Header extends React.Component {
             </div>
             <div className="global-nav__options">
                 <SearchForm onSubmit={this.search}/>
-                <button onClick={this.onClick}>test</button>
                 <div className="search-cities">{searchCities}</div>
+                <Link to="/forecast">forecast </Link>
+                <Link to="/">home </Link>
             </div>
 
         </nav>

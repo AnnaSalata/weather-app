@@ -1,6 +1,6 @@
 .search-city {
   display: flex;
-  width: 250px;
+  width: 300px;
   height: 50px;
   justify-content: space-between;
   align-items: center;
@@ -13,5 +13,16 @@
 
   &__name {
     font-weight: bold;
+  }
+
+  &__btn {
+    font-size: 10px;
+    width: 30px;
+    background-color: rgba(52, 154, 191, 0.8);
+    border: 1px solid #2193b0;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    cursor: pointer;
   }
 }

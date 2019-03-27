@@ -1,25 +1,18 @@
 import React, {Component} from 'react';
 import './App.scss';
 import {Header} from './components/header/';
-import {City} from "./components/main";
+import {Main} from "./components/main";
 
 
 class App extends Component {
-    state = {
-        cities: [],
-        defaultCitiesIds: [703448, 2643743, 4927854, 2759794, 3054643, 2950158, 3067696, 2761369, 3169070, 6453366, 3413829, 2988507],
-        currentCitiesIds: [],
-        APPID: '3099e6458ebc0fd39d284df99562b969'
 
-    };
 
-    onLoadWeather = () => {
+    /*onLoadWeather = () => {
         console.log("onload", this.state.defaultCitiesIds);
         if (this.state.defaultCitiesIds && this.state.defaultCitiesIds.length > 0) {
             this.prepareCityIds();
             this.showCurrentWeather();
         }
-
     };
 
     prepareCityIds() {
@@ -30,10 +23,8 @@ class App extends Component {
         } else {
             this.setCurrentCityIds(JSON.parse(lsCityIds));
         }
-
         //this.addCityId(703448);
         //this.removeCityId(703448);
-
     };
 
     setCurrentCityIds(cityIds) {
@@ -41,7 +32,7 @@ class App extends Component {
         this.setState(state => {
             return {...state, currentCitiesIds}
         })
-    }
+    };
 
     addCityId(newId) {
         let currentCitiesIds = this.state.currentCitiesIds;
@@ -58,7 +49,7 @@ class App extends Component {
             localStorage.setItem("cityIds", JSON.stringify(currentCitiesIds));
             // this.setCurrentCityIds(currentCitiesIds);
         }
-    }
+    };
 
     removeCityId(oldId) {
         let currentCitiesIds = this.state.currentCitiesIds;
@@ -69,7 +60,6 @@ class App extends Component {
                 break;
             }
         }
-
     }
 
     showCurrentWeather = () => {
@@ -91,17 +81,15 @@ class App extends Component {
                 })
                 .catch((e) => console.log(e));
         }
-    };
+    };*/
 
     render() {
-        const mainCities = this.state.cities.map(city => {
-            return <City key={city.id} cityName={city.name} temperature={city.main.temp}
-                         weather={city.weather[0].main}/>
-        });
         return (
-            <div className="App" onLoad={this.onLoadWeather}>
-                <Header onClick={this.addCityId}/>
-                <div className='cities'>{mainCities}</div>
+            <div className="App">
+
+
+                <Header/>
+                <Main/>
             </div>
         );
     }
