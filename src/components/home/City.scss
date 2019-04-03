@@ -9,20 +9,21 @@
   justify-content: space-around;
   align-items: center;
 
+  &:hover {
+    transform: scale(1.1);
+    z-index: 1;
+  }
   &__name {
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
   }
-
   &__temp {
     font-size: 18px;
   }
-
   &__weather {
     font-size: 18px;
   }
-
   &__btn {
     font-size: 10px;
     width: 50px;
@@ -33,4 +34,31 @@
     color: white;
     cursor: pointer;
   }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.rain {
+  background-image: url("../../assets/images/rain.png");
+}
+
+.clear {
+  background-image: url("../../assets/images/sun.png");
+}
+
+.clouds {
+  background-image: url("../../assets/images/clouds.png");
+}
+
+.drizzle {
+  background-image: url("../../assets/images/drizzle.png");
+}
+
+.mist {
+  background-image: url("../../assets/images/drizzle.png");
 }

@@ -6,13 +6,13 @@ export class SearchCity extends React.Component {
 
     onAdd = (e) => {
         e.preventDefault();
-        this.props.onAdd(this.props.cityId);
+        this.props.onAdd(this.props.id);
     };
 
     render() {
-        return <div className='search-city' id={this.props.cityId}>
+        return <div className='search-city' id={this.props.id}>
             <div className='search-city__name'>
-                <Link to='/forecast'>
+                <Link to={'/forecast/' + this.props.id}>
                     {this.props.cityName} </Link></div>
             <div className='search-city__temp'>{this.props.temperature}&#176;C</div>
             <div className='search-city__weather'>{this.props.weather}</div>

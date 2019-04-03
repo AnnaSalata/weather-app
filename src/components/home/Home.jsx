@@ -1,14 +1,8 @@
 import React from 'react';
 import './Home.scss';
-import {City} from "../main";
-
+import {City} from "./City";
 
 export class Home extends React.Component {
-
-    /*constructor(props, context, updater){
-        super(props, context, updater);
-        this.onLoadWeather()
-    }*/
 
     state = {
         cities: [],
@@ -28,6 +22,9 @@ export class Home extends React.Component {
         this.onLoadWeather()
     }
 
+    componentWillUnmount() {
+    }
+
     prepareCityIds() {
         let lsCityIds = localStorage.getItem("cityIds");
         if (!lsCityIds) {
@@ -39,8 +36,6 @@ export class Home extends React.Component {
     };
 
     removeCityId = (oldId) => {
-        console.log("remove!!");
-        console.log("oldId:", oldId);
         let currentCitiesIds = JSON.parse(localStorage.getItem("cityIds"));
         for (let i = 0; i < currentCitiesIds.length; i++) {
             if (currentCitiesIds[i] == oldId) {
@@ -59,7 +54,6 @@ export class Home extends React.Component {
         this.setState(state => {
             return {...state, cities}
         });
-        //this.showCurrentWeather();
     };
 
     showCurrentWeather = () => {
@@ -87,46 +81,13 @@ export class Home extends React.Component {
         }
     };
 
-    convertDate = (UNIX_timestamp) => {
-        const weatherDate = new Date(UNIX_timestamp * 1000);
-        return this.addZero(weatherDate.getDate()) + '.'
-            + this.addZero(weatherDate.getMonth() + 1) + '.'
-            + weatherDate.getFullYear() + ' '
-            + this.addZero(weatherDate.getHours()) + ':'
-            + this.addZero(weatherDate.getMinutes()) + ':';
-    };
-
-    addZero = (dateElement) => {
-        dateElement = dateElement.toString();
-        if (dateElement.length < 2) {
-            dateElement = '0' + dateElement;
-        }
-        return dateElement;
-    };
-
-    showWeatherForecast = () => {
-        const url = `http://api.openweathermap.org/data/2.5/forecast?id=703448&units=metric&APPID=3099e6458ebc0fd39d284df99562b969`;
-        fetch(url)
-            .then(response => response.json())
-            .then(response => {
-                console.log("resp", response);
-                const cityName = response.city.name;
-                const date = this.convertDate(response.list[0].dt);
-                const temperature = response.list[0].main.temp;
-                const weather = response.list[0].weather.main;
-                this.setState(state => {
-                    return {...state, cityName, date, temperature, weather}
-                })
-            })
-            .catch((e) => console.log(e));
-    };
-
     render() {
         const mainCities = this.state.cities.map(city => {
             return <City id={city.id} cityName={city.name} temperature={city.main.temp}
-                         weather={city.weather[0].main} onClick={this.showWeatherForecast}
+                         weather={city.weather[0].main}
                          onRemove={this.removeCityId}/>
         });
+
         return (
             <div>
                 <div className='cities'>
@@ -136,6 +97,3 @@ export class Home extends React.Component {
         );
     }
 }
-
-
-

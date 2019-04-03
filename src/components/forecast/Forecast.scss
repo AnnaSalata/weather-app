@@ -1,0 +1,43 @@
+.forecast-page {
+  width: 100%;
+  border-bottom: 10px;
+
+  &__header {
+    color: rgba(27, 125, 161, 0.9);
+    font-size: 30px;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  &__components {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__days {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0 20px 0;
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    height: auto;
+    padding-top: 60px;
+  }
+}

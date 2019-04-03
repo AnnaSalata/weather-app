@@ -1,0 +1,23 @@
+.weather-date {
+  border-bottom: 1px solid rgba(52, 154, 191, 0.8);
+  border-top: 1px solid rgba(52, 154, 191, 0.8);
+  padding: 20px 10px 10px 10px;
+  background-color: rgba(52, 154, 191, 0.1);
+  color: rgba(27, 125, 161, 0.9);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+.weather-date:hover {
+  border-bottom: none;
+  background-color: white;
+}
+
+.weather-date:focus {
+  border-bottom: none;
+  background-color: white;
+}

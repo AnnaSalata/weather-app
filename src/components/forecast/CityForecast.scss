@@ -1,0 +1,62 @@
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(52, 154, 191, 0.8);
+
+  &__date {
+    color: rgba(27, 125, 161, 0.9);
+    font-size: 14px;
+    font-weight: bold;
+    width: 200px;
+  }
+
+  &__weather {
+    color: rgba(27, 125, 161, 0.9);
+    font-size: 18px;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+  }
+
+  &__temperature {
+    color: rgba(27, 125, 161, 0.9);
+    font-size: 18px;
+    font-weight: bold;
+    width: 110px;
+    text-align: center;
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.rain {
+  background-image: url("../../assets/images/rain.png");
+}
+
+.clear {
+  background-image: url("../../assets/images/sun.png");
+}
+
+.clouds {
+  background-image: url("../../assets/images/clouds.png");
+}
+
+.drizzle {
+  background-image: url("../../assets/images/drizzle.png");
+}
+
+.mist {
+  background-image: url("../../assets/images/drizzle.png");
+}
+
+.snow {
+  background-image: url("../../assets/images/snow.png");
+}
