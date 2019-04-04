@@ -57,7 +57,8 @@ export class Header extends React.Component {
 
     render() {
         const searchCities = this.state.searchCities.map(searchCity => {
-            return <SearchCity id={searchCity.id} cityName={searchCity.name} temperature={searchCity.main.temp}
+            return <SearchCity key={searchCity.id} id={searchCity.id} cityName={searchCity.name}
+                               temperature={searchCity.main.temp}
                                weather={searchCity.weather[0].main} onAdd={this.addCityId}/>
         });
 

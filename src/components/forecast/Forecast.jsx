@@ -101,12 +101,12 @@ export class Forecast extends React.Component {
 
         if (this.state.weatherForecast && this.state.selectedDate) {
             weatherComponents = this.state.weatherForecast[this.state.selectedDate].map(item => {
-                return <CityForecast date={this.convertDate(item.dt, true)} temperature={item.main.temp}
+                return <CityForecast key={item.id} date={this.convertDate(item.dt, true)} temperature={item.main.temp}
                                      weather={item.weather[0].main}/>
             });
 
             days = Object.keys(this.state.weatherForecast).map(day => {
-                return <WeatherDate onClick={this.onChangeSelectedDate} day={day}/>
+                return <WeatherDate key={day.id} onClick={this.onChangeSelectedDate} day={day}/>
 
             })
         }

@@ -1,6 +1,6 @@
 .forecast-page {
   width: 100%;
-  border-bottom: 10px;
+  //border-bottom: 10px;
 
   &__header {
     color: rgba(27, 125, 161, 0.9);
@@ -26,7 +26,7 @@
   &__days {
     display: flex;
     justify-content: space-around;
-    margin: 40px 0 20px 0;
+    margin: 40px 0 0 0;
   }
 
   &__time {

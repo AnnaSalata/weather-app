@@ -66,9 +66,7 @@ export class Home extends React.Component {
             fetch(url)
                 .then(response => response.json())
                 .then(response => {
-                    console.log('list', response.list);
                     cities = response.list;
-                    ///this.state.cities = cities;
                     this.setState(state => {
                         return {...state, cities}
                     })
@@ -83,7 +81,7 @@ export class Home extends React.Component {
 
     render() {
         const mainCities = this.state.cities.map(city => {
-            return <City id={city.id} cityName={city.name} temperature={city.main.temp}
+            return <City key={city.id} id={city.id} cityName={city.name} temperature={city.main.temp}
                          weather={city.weather[0].main}
                          onRemove={this.removeCityId}/>
         });
