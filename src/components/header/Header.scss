@@ -47,11 +47,26 @@
     height: 30px;
     cursor: pointer;
   }
+
+  &__close {
+    display: none;
+  }
 }
 
 .global-nav_expand > .global-nav__options {
   transform: scaleX(1);
   z-index: 4;
+}
+
+.global-nav_expand .controls__close {
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.global-nav_expand .controls__menu {
+  display: none;
 }
 
 .search-cities {

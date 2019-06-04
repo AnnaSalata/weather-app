@@ -4,6 +4,7 @@ import {SearchForm} from "../searchForm";
 import {SearchCity} from "../searchCity/SearchCity";
 import logo from '../../assets/images/weather-logo.png';
 import menu from '../../assets/images/button.png';
+import close from '../../assets/images/popup_close.png';
 import {Link} from "react-router-dom";
 
 export class Header extends React.Component {
@@ -55,7 +56,9 @@ export class Header extends React.Component {
 
         return <nav className={className}>
             <div className="global-nav__controls controls">
-                <div className="controls__close" onClick={this.toggle}><img className="controls__menu" src={menu}
+                <div className="controls__menu" onClick={this.toggle}><img className="controls__menu" src={menu}
+                                                                           alt="меню"/></div>
+                <div className="controls__close" onClick={this.toggle}><img className="controls__close" src={close}
                                                                             alt="меню"/></div>
                 <div className="controls__logo">Weather App<Link to='/'><img className="controls__img" src={logo}
                                                                              alt=""/></Link></div>

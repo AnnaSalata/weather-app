@@ -32,6 +32,7 @@
   &__btn {
     font-size: 10px;
     width: 50px;
+    height: 20px;
     background-color: rgba(0, 0, 0, .4);
     border: 1px solid rgba(0, 0, 0, .4);
     border-radius: 5px;
@@ -41,8 +42,8 @@
   }
 
   &__img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background-size: contain;
     background-repeat: no-repeat;
   }

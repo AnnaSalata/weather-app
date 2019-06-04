@@ -11,10 +11,10 @@ export class City extends React.Component {
 
     render() {
         let className = "city__img " + this.props.weather.toLowerCase();
-        return <div className='city' id={this.props.id}>
+        return <Link to={'/forecast/' + this.props.id}>
+            <div className='city' id={this.props.id}>
             <div className='city__name'>
-                <Link to={'/forecast/' + this.props.id}>
-                    {this.props.cityName} </Link>
+                {this.props.cityName}
             </div>
             <div className='city__temp'>
                 {this.props.temperature}&#176;C
@@ -25,5 +25,6 @@ export class City extends React.Component {
             <div className={className}/>
             <button className='city__btn' onClick={this.onRemove}>remove</button>
         </div>
+        </Link>
     }
 }

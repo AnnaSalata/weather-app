@@ -10,13 +10,13 @@ export class SearchCity extends React.Component {
     };
 
     render() {
-        return <div className='search-city' id={this.props.id}>
-            <div className='search-city__name'>
-                <Link to={'/forecast/' + this.props.id}>
-                    {this.props.cityName} </Link></div>
+        return <Link to={'/forecast/' + this.props.id}>
+            <div className='search-city' id={this.props.id}>
+                <div className='search-city__name'>{this.props.cityName}</div>
             <div className='search-city__temp'>{this.props.temperature}&#176;C</div>
             <div className='search-city__weather'>{this.props.weather}</div>
             <button className='search-city__btn' onClick={this.onAdd}>add</button>
         </div>
+        </Link>
     }
 }
