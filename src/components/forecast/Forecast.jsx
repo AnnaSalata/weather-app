@@ -25,7 +25,7 @@ export class Forecast extends React.Component {
     }
 
     showWeatherForecast = (id) => {
-        const url = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&APPID=3099e6458ebc0fd39d284df99562b969`;
+        const url = `https://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&APPID=3099e6458ebc0fd39d284df99562b969`;
         fetch(url)
             .then(response => response.json())
             .then(response => {

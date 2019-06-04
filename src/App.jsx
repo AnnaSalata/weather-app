@@ -83,7 +83,7 @@ class App extends Component {
             const ids = [];
             ids.push(this.state.currentCitiesIds);
             const idsStr = ids.join(',');
-            const url = `http://api.openweathermap.org/data/2.5/group?id=${idsStr}&units=metric&APPID=${this.state.APPID}`;
+            const url = `https://api.openweathermap.org/data/2.5/group?id=${idsStr}&units=metric&APPID=${this.state.APPID}`;
             fetch(url)
                 .then(response => response.json())
                 .then(response => {
