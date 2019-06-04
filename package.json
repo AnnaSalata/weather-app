@@ -6,11 +6,12 @@
   },
   "private": true,
   "dependencies": {
+    "node-sass": "^4.12.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router": "latest",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
-    "react-router": "latest"
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
