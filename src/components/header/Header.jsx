@@ -4,7 +4,7 @@ import {SearchForm} from "../searchForm";
 import {SearchCity} from "../searchCity/SearchCity";
 import logo from '../../assets/images/weather-logo.png';
 import menu from '../../assets/images/button.png';
-import close from '../../assets/images/popup_close.png';
+import close from '../../assets/images/close_icon_new.png';
 import {Link} from "react-router-dom";
 
 export class Header extends React.Component {
