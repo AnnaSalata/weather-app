@@ -4,6 +4,7 @@ import {SearchForm} from "../searchForm";
 import {SearchCity} from "../searchCity/SearchCity";
 import logo from '../../assets/images/weather-logo.png';
 import menu from '../../assets/images/button.png';
+import {Link} from "react-router-dom";
 
 export class Header extends React.Component {
 
@@ -40,26 +41,11 @@ export class Header extends React.Component {
             .catch((e) => console.log(e));
     };
 
-    addCityId = (newId) => {
-        let currentCitiesIds = JSON.parse(localStorage.getItem("cityIds"));
-        let idAlreadyExist = false;
-        for (let id of currentCitiesIds) {
-            if (id == newId) {
-                idAlreadyExist = true;
-                break;
-            }
-        }
-        if (!idAlreadyExist) {
-            currentCitiesIds.push(newId);
-            localStorage.setItem("cityIds", JSON.stringify(currentCitiesIds));
-        }
-    };
-
     render() {
         const searchCities = this.state.searchCities.map(searchCity => {
             return <SearchCity key={searchCity.id} id={searchCity.id} cityName={searchCity.name}
                                temperature={searchCity.main.temp}
-                               weather={searchCity.weather[0].main} onAdd={this.addCityId}/>
+                               weather={searchCity.weather[0].main} onAdd={this.props.onAdd}/>
         });
 
         let className = "global-nav ";
@@ -70,8 +56,9 @@ export class Header extends React.Component {
         return <nav className={className}>
             <div className="global-nav__controls controls">
                 <div className="controls__close" onClick={this.toggle}><img className="controls__menu" src={menu}
-                                                                            alt=""/></div>
-                <div className="controls__logo">Weather App<img className="controls__img" src={logo} alt=""/></div>
+                                                                            alt="меню"/></div>
+                <div className="controls__logo">Weather App<Link to='/'><img className="controls__img" src={logo}
+                                                                             alt=""/></Link></div>
             </div>
             <div className="global-nav__options">
                 <SearchForm onSubmit={this.search}/>

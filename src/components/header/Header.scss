@@ -1,17 +1,17 @@
 .global-nav {
-  background-color: rgba(27, 125, 161, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5px;
+
   &__options {
     position: absolute;
     top: 50px;
     left: 0;
     height: calc(100% - 50px);
     width: 400px;
-    background-color: rgba(52, 154, 191, 0.8);
+    background-color: rgba(0, 0, 0, .6);
     flex-direction: column;
     justify-content: center;
     transform: scaleX(0);
@@ -20,11 +20,13 @@
     transition-delay: 50ms;
   }
 }
+
 .controls {
   width: 98%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   &__logo {
     width: 180px;
     justify-content: space-between;
@@ -39,22 +41,33 @@
     width: 40px;
     height: 40px;
   }
+
   &__menu {
-    width: 30px;
+    width: 40px;
     height: 30px;
     cursor: pointer;
   }
 }
+
 .global-nav_expand > .global-nav__options {
   transform: scaleX(1);
+  z-index: 4;
 }
-.global-nav_expand .global-nav__option {
-  opacity: 1;
-}
+
 .search-cities {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 720px) {
+  .global-nav__options {
+    width: 300px;
+    z-index: 2;
+  }
+  .controls__logo {
+    width: 160px;
+  }
 }

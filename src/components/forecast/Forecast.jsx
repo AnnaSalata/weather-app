@@ -45,22 +45,21 @@ export class Forecast extends React.Component {
         fetch(url)
             .then(response => response.json())
             .then(response => {
-                const image = response.results[0].urls.small;
+                const image = response.results[0].urls.regular;
                 this.setState(state => {
-                    return {...state, image}
+                    return {...state, image};
                 })
             })
             .catch((e) => console.log(e));
     };
 
-    convertDate = (date, withTime) => {
+    convertDate = (date, onlyTime) => {
         const weatherDate = new Date(date * 1000);
-        let formattedDate = this.addZero(weatherDate.getDate()) + '.'
-            + this.addZero(weatherDate.getMonth() + 1) + '.'
-            + weatherDate.getFullYear();
-        if (withTime) {
-            formattedDate = formattedDate + ' '
-                + this.addZero(weatherDate.getHours()) + ':'
+        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        let month = months[weatherDate.getMonth()];
+        let formattedDate = month + ' ' + this.addZero(weatherDate.getDate());
+        if (onlyTime) {
+            formattedDate = this.addZero(weatherDate.getHours()) + ':'
                 + this.addZero(weatherDate.getMinutes());
         }
         return formattedDate;
@@ -106,20 +105,25 @@ export class Forecast extends React.Component {
             });
 
             days = Object.keys(this.state.weatherForecast).map(day => {
-                return <WeatherDate key={day.id} onClick={this.onChangeSelectedDate} day={day}/>
+                let isActive = (day === this.state.selectedDate);
+                return <WeatherDate key={day.id} isActive={isActive} onClick={this.onChangeSelectedDate} day={day}/>
 
             })
         }
 
-        return <div className='forecast-page'>
-            <h2 className='forecast-page__header'>{this.state.cityName} 5 days weather forecast</h2>
-            <div className='forecast-page__components'>
+        const bgStyle = {
+            backgroundImage: 'url(' + this.state.image + ')',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+        };
+
+        return <div className='forecast-page' style={bgStyle}>
+            <h2 className='forecast-page__header'>{this.state.cityName}</h2>
                 <div className='forecast-page__weather'>
                     <div className='forecast-page__days'>{days}</div>
                     <div className='forecast-page__time'>{weatherComponents}</div>
                 </div>
-                <div className='forecast-page__img'><img src={this.state.image} alt=""/></div>
-            </div>
         </div>
     }
 }

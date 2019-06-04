@@ -9,8 +9,14 @@ export class WeatherDate extends React.Component {
     };
 
     render() {
-        return <button className='weather-date' onClick={this.onClick}>
+        let className = 'weather-date ';
+
+        if (this.props.isActive) {
+            className = className + "active-date";
+        }
+
+        return <div className={className} onClick={this.onClick}>
             {this.props.day}
-        </button>
+        </div>
     }
 }

@@ -1,14 +1,11 @@
-.cities__btn {
-  font-size: 10px;
-  width: 50px;
-  background-color: rgba(27, 125, 161, 0.9);
-  border: 1px solid #2193b0;
-  border-radius: 5px;
-  outline: none;
-  color: white;
-  cursor: pointer;
+.cities-page {
+  background-image: url("../../assets/images/istockphoto-993738504-612x612.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 95vh;
 }
-.cities {
+
+.cities-page__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

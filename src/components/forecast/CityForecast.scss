@@ -4,17 +4,19 @@
   align-items: center;
   width: 600px;
   padding: 5px 0;
-  border-bottom: 1px solid rgba(52, 154, 191, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, .25);
+  background-color: rgba(0, 0, 0, 0.4);
 
   &__date {
-    color: rgba(27, 125, 161, 0.9);
+    color: #ffffff;
     font-size: 14px;
     font-weight: bold;
     width: 200px;
+    padding: 0 0 0 10px;
   }
 
   &__weather {
-    color: rgba(27, 125, 161, 0.9);
+    color: #ffffff;
     font-size: 18px;
     font-weight: bold;
     width: 300px;
@@ -22,7 +24,7 @@
   }
 
   &__temperature {
-    color: rgba(27, 125, 161, 0.9);
+    color: #ffffff;
     font-size: 18px;
     font-weight: bold;
     width: 110px;
@@ -34,6 +36,32 @@
     height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 720px) {
+  .weather-forecast {
+    width: 375px;
+
+    &__date {
+      width: 80px;
+      font-size: 12px;
+    }
+
+    &__weather {
+      width: 150px;
+      font-size: 16px;
+    }
+
+    &__temperature {
+      width: 100px;
+      font-size: 16px;
+    }
+
+    &__img {
+      width: 35px;
+      height: 35px;
+    }
   }
 }
 

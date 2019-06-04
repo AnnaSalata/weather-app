@@ -11,7 +11,6 @@ export class City extends React.Component {
 
     render() {
         let className = "city__img " + this.props.weather.toLowerCase();
-
         return <div className='city' id={this.props.id}>
             <div className='city__name'>
                 <Link to={'/forecast/' + this.props.id}>

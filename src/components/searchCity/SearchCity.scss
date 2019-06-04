@@ -5,22 +5,31 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  border: 1px solid #2193b0;
-  background-color: rgba(27, 125, 161, 0.9);
+  border: 1px solid rgba(0, 0, 0, .6);
+  background-color: rgba(255, 255, 255, .3);
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
+  font-weight: bold;
+
   &__name {
     font-weight: bold;
   }
+
   &__btn {
     font-size: 10px;
     width: 30px;
-    background-color: rgba(52, 154, 191, 0.8);
-    border: 1px solid #2193b0;
+    background-color: rgba(255, 255, 255, .4);
+    border: 1px solid rgba(0, 0, 0, .6);
     border-radius: 5px;
     outline: none;
     color: white;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 720px) {
+  .search-city {
+    width: 250px;
   }
 }
