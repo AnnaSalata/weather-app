@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  background-color: black;
+
+  &__text {
+    color: white;
+    font-size: 14px;
+  }
+
+  &__logo {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 5px;
+  }
+}

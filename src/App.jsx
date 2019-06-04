@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.scss';
 import {Header} from './components/header/';
 import {Main} from "./components/main";
+import {Footer} from "./components/footer";
 
 class App extends Component {
     state = {
@@ -105,6 +106,7 @@ class App extends Component {
             <div className="App">
                 <Header onAdd={this.addCityId}/>
                 <Main cities={this.state.cities} onRemove={this.removeCityId}/>
+                <Footer/>
             </div>
         );
     }

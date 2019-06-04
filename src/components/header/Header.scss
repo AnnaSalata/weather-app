@@ -29,12 +29,13 @@
 
   &__logo {
     width: 180px;
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     align-items: center;
     color: white;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
   }
 
   &__img {
@@ -43,8 +44,8 @@
   }
 
   &__menu {
-    width: 40px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
   }
 

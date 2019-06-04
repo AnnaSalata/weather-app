@@ -3,8 +3,8 @@ import './Header.scss';
 import {SearchForm} from "../searchForm";
 import {SearchCity} from "../searchCity/SearchCity";
 import logo from '../../assets/images/weather-logo.png';
-import menu from '../../assets/images/button.png';
-import close from '../../assets/images/close_icon_new.png';
+import menu from '../../assets/images/show-sidepanel-50.png';
+import close from '../../assets/images/hide-sidepanel-50.png';
 import {Link} from "react-router-dom";
 
 export class Header extends React.Component {
@@ -60,8 +60,10 @@ export class Header extends React.Component {
                                                                            alt="меню"/></div>
                 <div className="controls__close" onClick={this.toggle}><img className="controls__close" src={close}
                                                                             alt="меню"/></div>
-                <div className="controls__logo">Weather App<Link to='/'><img className="controls__img" src={logo}
-                                                                             alt=""/></Link></div>
+                <Link to='/'>
+                    <div className="controls__logo">Weather App<img className="controls__img" src={logo}
+                                                                    alt=""/></div>
+                </Link>
             </div>
             <div className="global-nav__options">
                 <SearchForm onSubmit={this.search}/>
